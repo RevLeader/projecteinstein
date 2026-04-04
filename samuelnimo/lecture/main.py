@@ -8,10 +8,10 @@
 
 #3RD TASK
 #taking user name and making uppercase
-#name = input("Enter the Your Name : ")
-#l = name.upper()
-#name.upper()
-#print(f"Hello {l}")
+name = input("Enter the Your Name : ")
+ls = name.upper()
+name.upper()
+print(f"Hello {ls}")
 
 #4th task
 #function to take userinput 
