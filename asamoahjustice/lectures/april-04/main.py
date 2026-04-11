@@ -62,12 +62,6 @@
 #task 6 (building a calculator)
 #usign while loop to make the program run untill told to stop
 
-
-
-
-from unittest import result
-
-
 def calculate():
 
     while True:
