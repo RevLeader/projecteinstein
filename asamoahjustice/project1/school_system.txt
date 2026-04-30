@@ -1,0 +1,7 @@
+Name: KD
+Age: 2
+Contact: 22
+Email: 4ad
+Fees: GHS12.0
+Location: AD
+
