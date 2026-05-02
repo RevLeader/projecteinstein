@@ -34,5 +34,5 @@ def take_input():
     try:
         name = input("Enter your name: ")
         age = int(input("Enter your age: "))
-        number = int(input("Enter "))
+        number = float(input("Enter your number: "))
 # main()

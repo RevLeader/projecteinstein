@@ -114,3 +114,4 @@ def payment_plans():
 
 
 main()
+input("Press Enter to exit...")

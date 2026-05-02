@@ -1,7 +1,7 @@
-Name: KD
-Age: 2
-Contact: 22
-Email: 4ad
-Fees: GHS12.0
-Location: AD
+Name: JUSTICE ASAMOAH
+Age: 20
+Contact: 253300047
+Email: kkk@gmail.com
+Fees: GHS1500.0
+Location: ESTATE
 
