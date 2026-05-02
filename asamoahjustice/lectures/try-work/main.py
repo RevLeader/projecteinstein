@@ -1,16 +1,38 @@
-try:
-    user_name = input("Enter your full name: ").capitalize()
-    user_grade = int(input("Enter your grade: "))
+def main():
+    while True:
+        print("=" * 45)
+        print("\n---- Welcome TO Future Leaders Accademy ----\n")
+        print("1. Register")
+        print("2. About the school".title())
+        print("3. course Offered".title())
+        print("4. payment plans".title())
+        print("Exit")
+        print("\n=" * 45)
 
-except Exception as e:
-    print(f"A wrong value was entered, please try again: {e}")
+        choice = input("Enter one of the options above(1-5): ")
+    
+        if choice == '1':
+            take_input()
 
-else:
-    # "a" mode so grades keep adding up each run
-    with open("grades.txt", "a") as file:
-        file.write(f"{user_name}: {user_grade}\n")
+        elif choice == '2':
+            school_info():
 
-    # Read back the whole file to see all saved grades
-    with open("grades.txt", "r") as file:
-        print("\n--- All Grades ---")
-        print(file.read())
+        elif choice == '3':
+            course()
+
+        elif choice == '4':
+            payment_plans()
+
+        elif choice == '5':
+            print("\nThank you for visiting Future Leaders Accademy. Visite again later")
+            break
+        else:
+            print("Please enter a valid choice from 1-5")
+
+
+def take_input():
+    try:
+        name = input("Enter your name: ")
+        age = int(input("Enter your age: "))
+        number = int(input("Enter "))
+# main()

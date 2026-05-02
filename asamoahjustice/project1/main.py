@@ -1,3 +1,4 @@
+
 def main():
     while True:
         print("=" * 45)
@@ -113,13 +114,3 @@ def payment_plans():
 
 
 main()
-# import time
-# start = time.time()
-# n = 0
-# while n < 1000:
-#     print(n)
-#     n+= 1
-
-# end = time.time()
-# elapsed = end - start
-# print(int(elapsed))
