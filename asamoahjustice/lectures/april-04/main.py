@@ -59,29 +59,44 @@
 # print(condition())
 
 
-#task 6(building a calculator)
-# def calculator():
-#     a = int(input('Enter a number: '))
-#     b = int(input('Enter another number: '))
-#     c = input('Enter a mathematical operation eg. add, sub, div, mult: ')    
-#     results = ''
-#     if c == 'add' or c == '+':
-#         return a + b
+#task 6 (building a calculator)
+#using while loop to make the program run until told to stop
 
-#     elif c == 'sub' or c == '-':
-#         return a - b
+# def calculate():
+
+#     while True:
+
+#         c = input('Enter a mathematical operation or stop or end to close the program: ').strip().lower()
+
+#         if c == 'stop' or c == 'end':
+#             break #this stops the loop if the user types in stop or end
+
+#         #taking inputs from the user
+#         a = float(input('Enter a number: '))
+#         b = float(input('Enter another number: '))
+
+#         if c == 'add' or c == '+':
+#             result =  a + b
+#             print(f'the results of the operation is: {result}\n') 
+
+#         elif c == 'sub' or c == '-':
+#             print(f'the results of the operation is: {a} - {b}\n') 
+        
+#         elif c == 'div' or c == '/':
+#             print(f'the results of the operation is: {a} / {b}\n') 
+        
+#         elif c == 'mult' or c == '*':
+#             print(f'the results of the operation is: {a} * {b}\n') 
+        
+#         else:
+#             print('please enter either add, sub, div, or mult\n') 
+
+        
+        
+
     
-#     elif c == 'div' or c == '/':
-#         return a / b
-    
-#     elif c == 'mult' or c == '*':
-#         return a * b
-    
-#     else:
-#         return 'please enter either add, sub, div, or mult'
-    
-# #calling the function 
-# print(calculator())
+#calling the function 
+# calculate()
 
 #task 7
 # n = 0
@@ -89,10 +104,16 @@
 #     print(n)
 #     n += 1
 
-#fucntin calling meaow five times
-def calling():
-    call = 0
-    while call < 5:
-        print('meow')
-        call += 1
-calling()
+#function calling meow five times
+# def calling():
+#     call = 0
+#     while call < 5:
+#         print('meow')
+#         call += 1
+# calling()
+
+import calendar
+call = calendar.TextCalendar()
+print(call.pryear(2026))
+
+input("Press Enter to exit...")

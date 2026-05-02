@@ -1,0 +1,8 @@
+Python is awesome
+I am learning exceptions
+Files are cool
+Appending a new line!
+
+Appending a new line!
+Appending a new line!
+Appending a new line!
