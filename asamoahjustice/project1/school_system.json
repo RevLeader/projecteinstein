@@ -1,74 +1,8 @@
 [
     {
-        "name": "ASAMOAH",
-        "age": 20,
-        "contact": "025670000",
-        "location": "ODUOM"
-    },
-    {
-        "name": "APPIAH",
-        "age": 21,
-        "contact": "0265700555",
-        "location": "OFORIKROM"
-    },
-    {
-        "name": "MILLICENT",
-        "age": 18,
-        "contact": "0356947445",
-        "location": "TECH"
-    },
-    {
-        "name": "TONAH",
-        "age": 25,
-        "contact": "024000000",
-        "location": "EJISU"
-    },
-    {
-        "name": "OGYAM",
-        "age": 23,
-        "contact": "026578200",
-        "location": "ASOKWA"
-    },
-    {
-        "name": "OGYAM",
-        "age": 23,
-        "contact": "026578200",
-        "location": "ASOKWA"
-    },
-    {
-        "name": "MICHAEL",
-        "age": 23,
-        "contact": "0240000",
-        "location": "AGOGO"
-    },
-    {
-        "name": "AMOS",
-        "age": 25,
-        "contact": "056700055",
-        "location": "OFFINSO"
-    },
-    {
-        "name": "JAMES",
-        "age": 26,
-        "contact": "0249480631",
-        "location": "KUMASI"
-    },
-    {
         "name": "ASAMOAH JUSTICE",
-        "age": 20,
+        "age": 25,
         "contact": "0256700693",
-        "location": "ANWOMASO, ODUOM"
-    },
-    {
-        "name": "ASAMOAH JUSTICE",
-        "age": 202,
-        "contact": "0256666666",
-        "location": "KKKK"
-    },
-    {
-        "name": "EVANS APPIAH",
-        "age": 30,
-        "contact": "0256700693",
-        "location": "KAFO KDO"
+        "location": "ANWOMASO"
     }
 ]

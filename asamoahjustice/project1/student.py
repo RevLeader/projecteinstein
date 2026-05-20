@@ -3,32 +3,88 @@ import json
 
 #function for taking user's info
 def get_user_info():
-    user_input = input("\nProceed to enter your details by pressing Enter or enter 0 to go back: ")
-    if user_input == '0':
-        return None #exit to the main function if the input is 0
     
     #defining items to loop through
     fields = ["name", "age", "contact", "location"]
     user_data = {} #initializin it so to store the info in it later
 
+    print()
     #looping through the list
     for field in fields:
         while True:
             value = input(f"Enter your {field}: ").strip() #taking input for each field
 
+            if field in ("name", "location"):
+                value = value.upper()
+
             #if user types only spaces and not a value
             if not value:
-                print(f"{field.capitalize()} cannot be empty, try again!")
+                print(f"\n{field.capitalize()} cannot be empty, try again!")
                 continue
+
             if field == "age":
                 try:
                     value = int(value)
                 except ValueError:
-                    print("Age must be a number!")
+                    print("\nAge must be a number!")
                     continue
 
-            if field in ("name", "location"):
-                value = value.upper()
+            if field == "name":
+                #checking if naqme has already has already been registered or not
+                try:
+                    with open("school_system.json", "r") as file:
+                        all_students = json.load(file)
+
+                except FileNotFoundError:
+                    all_students = []
+
+                found = False
+                for student in all_students:
+                    if sorted(value.split()) == sorted(student["name"].split()):
+                        found = True
+                        break
+
+                if found:
+                    print("\nStudent already registered!")
+                    print("Do you still wish to continue? If it was you who has registered earlier, type NO, otherwise type YES\n")
+
+                    restart = False
+                    while True:
+                        choice = input("Enter YES/NO: ").upper()
+
+                        if choice == "NO" or choice == "N":
+                            restart = True
+                            break
+
+                        elif choice == "YES" or choice == "Y":
+                            print("Name registered\n")
+                            break
+
+                        else:
+                            print("Invalid input, try again!")
+
+                    if restart:
+                        continue
+
+                #checking if name is less than one word
+                if len(value.split()) < 2:
+                    print("\nPlease enter your full name!")
+                    continue
+            if field == "contact":
+                #checking if the contact entered is actually all numbers
+                if not value.isdigit():
+                    print("\nNumber must be an interger(0-9)")
+                    continue
+
+                    #checking if the entered number starts with 0
+                if not value.startswith("0"):
+                    print("\nNumber must start with 0")
+                    continue
+                
+                #checking if number is not less or more than 10
+                if len(value) != 10:
+                    print("\nNumber must be exactly 10 digits")
+                    continue
 
             user_data[field] = value
             break #done with this field, move to the next
@@ -141,10 +197,10 @@ def edit_studentinfo(user_data):
 def search_forstudent():
     search = input("Please enter full name of student(eg, Kofi): ").upper()
 
-    #reading all the students info to search from
-    with open("school_system.json", "r") as file:
-        all_students = json.load(file)
     try:
+        #reading all the students info to search from
+        with open("school_system.json", "r") as file:
+            all_students = json.load(file)
 
         #assuming no student has been found
         found = False
@@ -164,6 +220,10 @@ def search_forstudent():
         #inside  the if statement will be true and when it gets here, not makes it false so it does't run
         if not found:
             print("No student found with that name. Please try again")
-    except Exception as e:
+
+    except FileNotFoundError:
         print("\nOoops 🙊. No student registered yet! Try again later")
+    
+    except Exception as e:
         print(e)
+        
