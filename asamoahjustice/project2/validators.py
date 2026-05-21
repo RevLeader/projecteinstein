@@ -4,7 +4,7 @@ def validate_name(value):
         return False, "Please name cannot be empty"
 
     #if name is not 2 or more words long
-    if len(value.split()) > 2:
+    if len(value.split()) < 2:
         return False, "Enter your full name"
     
     #return true if all passes
