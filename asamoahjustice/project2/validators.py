@@ -4,7 +4,7 @@ def validate_name(value):
         return False, "Please name cannot be empty"
 
     #if name is not 2 or more words long
-    if len(value.split()) < 2:
+    if len(value.strip().split()) < 2:
         return False, "Enter your full name"
     
     #return true if all passes
@@ -13,7 +13,7 @@ def validate_name(value):
     #validation for number input
 def validate_number(value):
     #if the number is int
-    if not value.isdigit():
+    if not value.isdigit().strip():
         return False, "Number must be all digits(0-9)"
     
     #if the number starts with 0
@@ -25,4 +25,5 @@ def validate_number(value):
         return False, "Number must be exactly 10numbers long" 
     
     return True, None
+
     

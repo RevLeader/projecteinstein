@@ -1,6 +1,7 @@
 APP_NAME = "BuyerFirst GH"
 SEPARATOR = "=" * 45
 DIVIDER = "-" * 45
+FILE_NAME = "listings.json"
 
 PRICE_RANGES = {
     "laptop": {"min": 1000, "max": 5000},

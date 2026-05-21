@@ -1,5 +1,6 @@
-from constant import SEPARATOR, DIVIDER, PRICE_RANGES
+from constant import SEPARATOR, DIVIDER, PRICE_RANGES, FILE_NAME
 from validators import validate_name, validate_number
+import json
 
 #registring buyer
 def register_buyer():
@@ -8,8 +9,12 @@ def register_buyer():
 
     for info in details:
         while True:
+
+            if info == "budget":
+                print("Tip: type 'idk' or press enter if you don't know your budget yet")
+
             #taking input for each field
-            value = input(f"Please enter your {info.capitalise()}")
+            value = input(f"Please enter your {info.capitalize()}").strip()
 
             #at name input
             if info == "name":
@@ -41,6 +46,51 @@ def register_buyer():
                 if not value:
                     print(f"{info.capitalize()} cannot be empty. Try again")
                     continue
-
                 value = value.lower()
+
+            if info == "budget":
+
+                if not value or value == "idk":
+                    item = buyer_data["item"] #grab item they already entered
+
+                    if item in PRICE_RANGES:
+                        print(f"Typical price range for {item}: GHS {PRICE_RANGES[item]['min']:,} - {PRICE_RANGES[item]['max']:,}")
+                    
+                    else:
+                        print("We don't have a price range for that item yet. Enter your budget.")
+
+                    continue #asks for the budget again
+                try:
+                    value = int(value)
+
+                except ValueError:
+                    print("Budget must be a number")
+                    continue
+
+            buyer_data[info] = value
+            break
+
+    try:
+
+        #reading saved old data
+        with open(FILE_NAME, "r") as file:
+            all_data = json.load(file)
+        
+        #saving buyer data to all data
+        all_data["buyers"].append(buyer_data)
+
+        #writing everything back
+        with open(FILE_NAME, "w") as file:
+            json.dump(all_data, file)
+
+    except FileNotFoundError:
+        all_data = {"buyers": [], "sellers": []}
+        all_data["buyers"].append(buyer_data)
+
+        with open(FILE_NAME, "w") as file:
+            json.dump(all_data, file)
+
+            
+
+
             
