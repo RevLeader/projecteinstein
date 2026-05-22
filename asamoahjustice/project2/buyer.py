@@ -69,6 +69,36 @@ def register_buyer():
 
             buyer_data[info] = value
             break
+        
+    #taking purpose or specs
+    print("Do you know the specifications(specs) for the items you need? yes/no?")
+    specf = input("Enter yes/no: \n").upper()
+
+    buyer_data["specs"] = {}
+
+    if specf in ('YES', 'Y'):
+        while True:
+            value = input("Enter specs (e.g. 16GB RAM, i7, SSD): ").strip()
+            if not value:
+                print("Specs cannot be empty. Try again")
+                continue
+
+            buyer_data["specs"] = value
+            buyer_data["purpose"] = ""
+            break
+                    
+            
+
+    else:
+        while True:
+            value = input("Enter purpose the item is going to be used for: ").strip()
+            if not value:
+                print("Purpose cannot be empty. Try again")
+                continue
+            
+            buyer_data["purpose"] = value
+            buyer_data["specs"] = ""
+            break
 
     try:
 
