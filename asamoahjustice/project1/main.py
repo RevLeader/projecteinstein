@@ -9,6 +9,7 @@ print("Welcome to future leaders academy.".title())
 print("Please select an option below to proceed: ".title())
 print(f"{separator}\n")
 
+
 def main():
 
     while True:

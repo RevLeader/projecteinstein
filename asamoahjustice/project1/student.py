@@ -30,7 +30,6 @@ def get_user_info():
                     continue
 
             if field == "name":
-<<<<<<< HEAD
                 #checking if naqme has already has already been registered or not
                 try:
                     with open("school_system.json", "r") as file:
@@ -86,11 +85,6 @@ def get_user_info():
                 if len(value) != 10:
                     print("\nNumber must be exactly 10 digits")
                     continue
-=======
-                if len(
-            if field in ("name", "location"):
-                value = value.upper()
->>>>>>> 47d46783e1c8b9585cfda6a1ad941ab30b234c60
 
             user_data[field] = value
             break #done with this field, move to the next
